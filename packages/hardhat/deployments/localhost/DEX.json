@@ -1,0 +1,431 @@
+{
+  "address": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "token_addr",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_swapper",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "tokenOutput",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "ethInput",
+          "type": "uint256"
+        }
+      ],
+      "name": "EthToTokenSwap",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_liquidityProvider",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "ethInput",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "tokensInput",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newLiquidityPosition",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "liquidityMinted",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "totalLiquidity",
+          "type": "uint256"
+        }
+      ],
+      "name": "LiquidityProvided",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_liquidityRemover",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "ethOutput",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "tokensOutput",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newLiquidityPosition",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "liquidityWithdrawn",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "totalLiquidity",
+          "type": "uint256"
+        }
+      ],
+      "name": "LiquidityRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "_swapper",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "ethOutput",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "tokensInput",
+          "type": "uint256"
+        }
+      ],
+      "name": "TokenToEthSwap",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "deposit",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokensDeposited",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ethToToken",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenOutput",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokens",
+          "type": "uint256"
+        }
+      ],
+      "name": "init",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "liquidity",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "xInput",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "xReserves",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "yReserves",
+          "type": "uint256"
+        }
+      ],
+      "name": "price",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "yOutput",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenInput",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenToEth",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "ethOutput",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalLiquidity",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "eth_amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "token_amount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x6a83cd6af9009a2e0d99f748f67e65b64cc260ee880df867c7b0d0a6e1a07cb1",
+  "receipt": {
+    "to": null,
+    "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "contractAddress": "0x8A791620dd6260079BF849Dc5567aDC3F2FdC318",
+    "transactionIndex": 0,
+    "gasUsed": "741736",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x7bb7214e6e16ec298f4bc59838914ee8c1aebd62754a74b0dedabc79c51150f9",
+    "transactionHash": "0x6a83cd6af9009a2e0d99f748f67e65b64cc260ee880df867c7b0d0a6e1a07cb1",
+    "logs": [],
+    "blockNumber": 10,
+    "cumulativeGasUsed": "741736",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6"
+  ],
+  "solcInputHash": "eb6c89df96eacacf7b4cb4f71100106b",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.4+commit.c7e474f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token_addr\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_swapper\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokenOutput\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"ethInput\",\"type\":\"uint256\"}],\"name\":\"EthToTokenSwap\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_liquidityProvider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"ethInput\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokensInput\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newLiquidityPosition\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"liquidityMinted\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"totalLiquidity\",\"type\":\"uint256\"}],\"name\":\"LiquidityProvided\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_liquidityRemover\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"ethOutput\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokensOutput\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newLiquidityPosition\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"liquidityWithdrawn\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"totalLiquidity\",\"type\":\"uint256\"}],\"name\":\"LiquidityRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_swapper\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"ethOutput\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"tokensInput\",\"type\":\"uint256\"}],\"name\":\"TokenToEthSwap\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"deposit\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"tokensDeposited\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ethToToken\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenOutput\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokens\",\"type\":\"uint256\"}],\"name\":\"init\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"liquidity\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"xInput\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"xReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"yReserves\",\"type\":\"uint256\"}],\"name\":\"price\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"yOutput\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenInput\",\"type\":\"uint256\"}],\"name\":\"tokenToEth\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"ethOutput\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalLiquidity\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"withdraw\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"eth_amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"token_amount\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Steve P.\",\"kind\":\"dev\",\"methods\":{\"init(uint256)\":{\"params\":{\"tokens\":\"amount to be transferred to DEX\"},\"returns\":{\"_0\":\"totalLiquidity is the balance of this DEX contract NOTE: since ratio is 1:1, this is fine to initialize the totalLiquidity (wrt to balloons) as equal to eth balance of contract.\"}}},\"title\":\"DEX\",\"version\":1},\"userdoc\":{\"events\":{\"EthToTokenSwap(address,uint256,uint256)\":{\"notice\":\"Emitted when ethToToken() swap transacted\"},\"LiquidityProvided(address,uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when liquidity provided to DEX\"},\"LiquidityRemoved(address,uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when liquidity removed from DEX\"},\"TokenToEthSwap(address,uint256,uint256)\":{\"notice\":\"Emitted when tokenToEth() swap transacted\"}},\"kind\":\"user\",\"methods\":{\"deposit()\":{\"notice\":\"allows deposits of $BAL and $ETH to liquidity pool NOTE: Ratio needs to be maintained.\"},\"ethToToken()\":{\"notice\":\"sends Ether to DEX in exchange for $BAL\"},\"init(uint256)\":{\"notice\":\"initializes amount of tokens that will be transferred to the DEX itself from the erc20 contract mintee (and only them based on how Balloons.sol is written). Loads contract up with both ETH and Balloons.\"},\"price(uint256,uint256,uint256)\":{\"notice\":\"returns yOutput, or yDelta for xInput (or xDelta)\"},\"tokenToEth(uint256)\":{\"notice\":\"sends $BAL tokens to DEX in exchange for Ether\"},\"withdraw(uint256)\":{\"notice\":\"allows withdrawal of $BAL and $ETH from liquidity pool\"}},\"notice\":\"this is a single token pair reserves DEX, ref: \\\"Scaffold-ETH Challenge 2\\\" as per https://speedrunethereum.com/challenge/token-vendor\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/DEX.sol\":\"DEX\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (token/ERC20/IERC20.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Interface of the ERC20 standard as defined in the EIP.\\n */\\ninterface IERC20 {\\n    /**\\n     * @dev Returns the amount of tokens in existence.\\n     */\\n    function totalSupply() external view returns (uint256);\\n\\n    /**\\n     * @dev Returns the amount of tokens owned by `account`.\\n     */\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    /**\\n     * @dev Moves `amount` tokens from the caller's account to `recipient`.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transfer(address recipient, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Returns the remaining number of tokens that `spender` will be\\n     * allowed to spend on behalf of `owner` through {transferFrom}. This is\\n     * zero by default.\\n     *\\n     * This value changes when {approve} or {transferFrom} are called.\\n     */\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    /**\\n     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * IMPORTANT: Beware that changing an allowance with this method brings the risk\\n     * that someone may use both the old and the new allowance by unfortunate\\n     * transaction ordering. One possible solution to mitigate this race\\n     * condition is to first reduce the spender's allowance to 0 and set the\\n     * desired value afterwards:\\n     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729\\n     *\\n     * Emits an {Approval} event.\\n     */\\n    function approve(address spender, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Moves `amount` tokens from `sender` to `recipient` using the\\n     * allowance mechanism. `amount` is then deducted from the caller's\\n     * allowance.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transferFrom(\\n        address sender,\\n        address recipient,\\n        uint256 amount\\n    ) external returns (bool);\\n\\n    /**\\n     * @dev Emitted when `value` tokens are moved from one account (`from`) to\\n     * another (`to`).\\n     *\\n     * Note that `value` may be zero.\\n     */\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n\\n    /**\\n     * @dev Emitted when the allowance of a `spender` for an `owner` is set by\\n     * a call to {approve}. `value` is the new allowance.\\n     */\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n}\\n\",\"keccak256\":\"0x61437cb513a887a1bbad006e7b1c8b414478427d33de47c5600af3c748f108da\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/math/SafeMath.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/math/SafeMath.sol)\\n\\npragma solidity ^0.8.0;\\n\\n// CAUTION\\n// This version of SafeMath should only be used with Solidity 0.8 or later,\\n// because it relies on the compiler's built in overflow checks.\\n\\n/**\\n * @dev Wrappers over Solidity's arithmetic operations.\\n *\\n * NOTE: `SafeMath` is generally not needed starting with Solidity 0.8, since the compiler\\n * now has built in overflow checking.\\n */\\nlibrary SafeMath {\\n    /**\\n     * @dev Returns the addition of two unsigned integers, with an overflow flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function tryAdd(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            uint256 c = a + b;\\n            if (c < a) return (false, 0);\\n            return (true, c);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the substraction of two unsigned integers, with an overflow flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function trySub(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            if (b > a) return (false, 0);\\n            return (true, a - b);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the multiplication of two unsigned integers, with an overflow flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function tryMul(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            // Gas optimization: this is cheaper than requiring 'a' not being zero, but the\\n            // benefit is lost if 'b' is also tested.\\n            // See: https://github.com/OpenZeppelin/openzeppelin-contracts/pull/522\\n            if (a == 0) return (true, 0);\\n            uint256 c = a * b;\\n            if (c / a != b) return (false, 0);\\n            return (true, c);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the division of two unsigned integers, with a division by zero flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function tryDiv(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            if (b == 0) return (false, 0);\\n            return (true, a / b);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the remainder of dividing two unsigned integers, with a division by zero flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function tryMod(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            if (b == 0) return (false, 0);\\n            return (true, a % b);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the addition of two unsigned integers, reverting on\\n     * overflow.\\n     *\\n     * Counterpart to Solidity's `+` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Addition cannot overflow.\\n     */\\n    function add(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a + b;\\n    }\\n\\n    /**\\n     * @dev Returns the subtraction of two unsigned integers, reverting on\\n     * overflow (when the result is negative).\\n     *\\n     * Counterpart to Solidity's `-` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Subtraction cannot overflow.\\n     */\\n    function sub(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a - b;\\n    }\\n\\n    /**\\n     * @dev Returns the multiplication of two unsigned integers, reverting on\\n     * overflow.\\n     *\\n     * Counterpart to Solidity's `*` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Multiplication cannot overflow.\\n     */\\n    function mul(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a * b;\\n    }\\n\\n    /**\\n     * @dev Returns the integer division of two unsigned integers, reverting on\\n     * division by zero. The result is rounded towards zero.\\n     *\\n     * Counterpart to Solidity's `/` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function div(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a / b;\\n    }\\n\\n    /**\\n     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),\\n     * reverting when dividing by zero.\\n     *\\n     * Counterpart to Solidity's `%` operator. This function uses a `revert`\\n     * opcode (which leaves remaining gas untouched) while Solidity uses an\\n     * invalid opcode to revert (consuming all remaining gas).\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function mod(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a % b;\\n    }\\n\\n    /**\\n     * @dev Returns the subtraction of two unsigned integers, reverting with custom message on\\n     * overflow (when the result is negative).\\n     *\\n     * CAUTION: This function is deprecated because it requires allocating memory for the error\\n     * message unnecessarily. For custom revert reasons use {trySub}.\\n     *\\n     * Counterpart to Solidity's `-` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Subtraction cannot overflow.\\n     */\\n    function sub(\\n        uint256 a,\\n        uint256 b,\\n        string memory errorMessage\\n    ) internal pure returns (uint256) {\\n        unchecked {\\n            require(b <= a, errorMessage);\\n            return a - b;\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the integer division of two unsigned integers, reverting with custom message on\\n     * division by zero. The result is rounded towards zero.\\n     *\\n     * Counterpart to Solidity's `/` operator. Note: this function uses a\\n     * `revert` opcode (which leaves remaining gas untouched) while Solidity\\n     * uses an invalid opcode to revert (consuming all remaining gas).\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function div(\\n        uint256 a,\\n        uint256 b,\\n        string memory errorMessage\\n    ) internal pure returns (uint256) {\\n        unchecked {\\n            require(b > 0, errorMessage);\\n            return a / b;\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),\\n     * reverting with custom message when dividing by zero.\\n     *\\n     * CAUTION: This function is deprecated because it requires allocating memory for the error\\n     * message unnecessarily. For custom revert reasons use {tryMod}.\\n     *\\n     * Counterpart to Solidity's `%` operator. This function uses a `revert`\\n     * opcode (which leaves remaining gas untouched) while Solidity uses an\\n     * invalid opcode to revert (consuming all remaining gas).\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function mod(\\n        uint256 a,\\n        uint256 b,\\n        string memory errorMessage\\n    ) internal pure returns (uint256) {\\n        unchecked {\\n            require(b > 0, errorMessage);\\n            return a % b;\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xa2f576be637946f767aa56601c26d717f48a0aff44f82e46f13807eea1009a21\",\"license\":\"MIT\"},\"contracts/DEX.sol\":{\"content\":\"pragma solidity >=0.8.0 <0.9.0;\\n// SPDX-License-Identifier: MIT\\n\\nimport \\\"@openzeppelin/contracts/token/ERC20/IERC20.sol\\\";\\nimport \\\"@openzeppelin/contracts/utils/math/SafeMath.sol\\\";\\n\\n/**\\n * @title DEX\\n * @author Steve P.\\n * @notice this is a single token pair reserves DEX, ref: \\\"Scaffold-ETH Challenge 2\\\" as per https://speedrunethereum.com/challenge/token-vendor\\n */\\ncontract DEX {\\n    uint256 public totalLiquidity; //BAL token total liquidity in this contract\\n    mapping(address => uint256) public liquidity;\\n\\n    using SafeMath for uint256; //outlines use of SafeMath for uint256 variables\\n    IERC20 token; //instantiates the imported contract\\n\\n    /* ========== EVENTS ========== */\\n\\n    /**\\n     * @notice Emitted when ethToToken() swap transacted\\n     */\\n    event EthToTokenSwap(address _swapper, uint256 tokenOutput, uint256 ethInput);\\n\\n    /**\\n     * @notice Emitted when tokenToEth() swap transacted\\n     */\\n    event TokenToEthSwap(address _swapper, uint256 ethOutput, uint256 tokensInput);\\n\\n    /**\\n     * @notice Emitted when liquidity provided to DEX\\n     */\\n    event LiquidityProvided(\\n        address _liquidityProvider,\\n        uint256 ethInput,\\n        uint256 tokensInput,\\n        uint256 newLiquidityPosition,\\n        uint256 liquidityMinted,\\n        uint256 totalLiquidity\\n    );\\n\\n    /**\\n     * @notice Emitted when liquidity removed from DEX\\n     */\\n    event LiquidityRemoved(\\n        address _liquidityRemover,\\n        uint256 ethOutput,\\n        uint256 tokensOutput,\\n        uint256 newLiquidityPosition,\\n        uint256 liquidityWithdrawn,\\n        uint256 totalLiquidity\\n    );\\n\\n    /* ========== CONSTRUCTOR ========== */\\n\\n    constructor(address token_addr) public {\\n        token = IERC20(token_addr); //specifies the token address that will hook into the interface and be used through the variable 'token'\\n    }\\n\\n    /* ========== MUTATIVE FUNCTIONS ========== */\\n\\n    /**\\n     * @notice initializes amount of tokens that will be transferred to the DEX itself from the erc20 contract mintee (and only them based on how Balloons.sol is written). Loads contract up with both ETH and Balloons.\\n     * @param tokens amount to be transferred to DEX\\n     * @return totalLiquidity is the balance of this DEX contract\\n     * NOTE: since ratio is 1:1, this is fine to initialize the totalLiquidity (wrt to balloons) as equal to eth balance of contract.\\n     */\\n    function init(uint256 tokens) public payable returns (uint256) {\\n        require(totalLiquidity == 0, \\\"DEX: init - already has liquidity\\\");\\n        totalLiquidity = address(this).balance;\\n        liquidity[msg.sender] = totalLiquidity;\\n        require(token.transferFrom(msg.sender, address(this), tokens), \\\"DEX: init - transfer did not transact\\\");\\n        return totalLiquidity;\\n    }\\n\\n    /**\\n     * @notice returns yOutput, or yDelta for xInput (or xDelta)\\n     */\\n    function price(\\n        uint256 xInput,\\n        uint256 xReserves,\\n        uint256 yReserves\\n    ) public view returns (uint256 yOutput) {\\n        uint256 xInputWithFee = xInput.mul(997);\\n        uint256 numerator = xInputWithFee.mul(yReserves);\\n        uint256 denominator = (xReserves.mul(1000)).add(xInputWithFee);\\n        return (numerator / denominator);\\n    }\\n\\n    /**\\n     * @notice sends Ether to DEX in exchange for $BAL\\n     */\\n    function ethToToken() public payable returns (uint256 tokenOutput) {\\n        //  require(msg.value > 0, \\\"ethToToken: can't trade 0\\\");\\n        uint256 ethReserve = address(this).balance.sub(msg.value);\\n        uint256 token_reserve = token.balanceOf(address(this));\\n        uint256 tokenOutput = price(msg.value, ethReserve, token_reserve);\\n\\n        //  totalLiquidity = totalLiquidity.sub(tokenOutput); //update totalLiquidity? I guess you don't because even though liquidity is changing... it isn't in a macro-scale? We still have the same amount of liquidity in \\\"total\\\" but just different asset ratios.\\n        require(token.transfer(msg.sender, tokenOutput), \\\"ethToToken(): reverted swap.\\\");\\n        return tokenOutput;\\n        emit EthToTokenSwap(msg.sender, tokenOutput, msg.value);\\n    }\\n\\n    /**\\n     * @notice sends $BAL tokens to DEX in exchange for Ether\\n     */\\n    function tokenToEth(uint256 tokenInput) public returns (uint256 ethOutput) {\\n        //  require(tokenInput > 0, \\\"tokenToEth: can't trade 0\\\");\\n        uint256 token_reserve = token.balanceOf(address(this));\\n\\n        uint256 ethOutput = price(tokenInput, token_reserve, address(this).balance);\\n\\n        //  totalLiquidity = totalLiquidity.add(tokenInput); //update totalLiquidity\\n        require(token.transferFrom(msg.sender, address(this), tokenInput), \\\"tokenToEth(): reverted swap.\\\");\\n        (bool sent, ) = msg.sender.call{ value: ethOutput }(\\\"\\\");\\n        require(sent, \\\"tokenToEth: revert in transferring eth to you!\\\");\\n        return ethOutput;\\n        emit TokenToEthSwap(msg.sender, ethOutput, tokenInput);\\n    }\\n\\n    /**\\n     * @notice allows deposits of $BAL and $ETH to liquidity pool\\n     * NOTE: Ratio needs to be maintained.\\n     */\\n    function deposit() public payable returns (uint256 tokensDeposited) {\\n        uint256 ethReserve = address(this).balance.sub(msg.value);\\n        uint256 tokenReserve = token.balanceOf(address(this));\\n        uint256 tokenDeposit;\\n\\n        tokenDeposit = msg.value.mul((tokenReserve / ethReserve)).add(1);\\n        uint256 liquidityMinted = msg.value.mul(totalLiquidity / ethReserve);\\n        liquidity[msg.sender] = liquidity[msg.sender].add(liquidityMinted);\\n        totalLiquidity = totalLiquidity.add(liquidityMinted);\\n\\n        require(token.transferFrom(msg.sender, address(this), tokenDeposit));\\n        return tokenDeposit;\\n        emit LiquidityProvided(\\n            msg.sender,\\n            msg.value,\\n            tokenDeposit,\\n            liquidity[msg.sender],\\n            liquidityMinted,\\n            totalLiquidity\\n        );\\n    }\\n\\n    /**\\n     * @notice allows withdrawal of $BAL and $ETH from liquidity pool\\n     */\\n    function withdraw(uint256 amount) public returns (uint256 eth_amount, uint256 token_amount) {\\n        uint256 ethReserve = address(this).balance;\\n        uint256 tokenReserve = token.balanceOf(address(this));\\n        uint256 ethWithdrawn;\\n\\n        ethWithdrawn = amount.mul((ethReserve / totalLiquidity));\\n\\n        uint256 tokenAmount = amount.mul(tokenReserve) / totalLiquidity;\\n        liquidity[msg.sender] = liquidity[msg.sender].sub(ethWithdrawn);\\n        totalLiquidity = totalLiquidity.sub(ethWithdrawn);\\n        (bool sent, ) = msg.sender.call{ value: ethWithdrawn }(\\\"\\\");\\n        require(sent, \\\"withdraw(): revert in transferring eth to you!\\\");\\n        require(token.transfer(msg.sender, tokenAmount));\\n\\n        return (ethWithdrawn, tokenAmount);\\n        emit LiquidityRemoved(\\n            msg.sender,\\n            ethWithdrawn,\\n            tokenAmount,\\n            liquidity[msg.sender],\\n            ethWithdrawn,\\n            totalLiquidity\\n        );\\n    }\\n}\",\"keccak256\":\"0x2ac5afc0500e91e46efd9cbd28584329c338f373a22b30f08323a1a645f21018\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50604051610c96380380610c9683398101604081905261002f91610054565b600280546001600160a01b0319166001600160a01b0392909216919091179055610082565b600060208284031215610065578081fd5b81516001600160a01b038116811461007b578182fd5b9392505050565b610c05806100916000396000f3fe60806040526004361061007b5760003560e01c8063789770f41161004e578063789770f41461011e578063b7b0422d14610126578063b8c876b114610139578063d0e30db01461016657600080fd5b806315770f92146100805780632071a9f4146100a95780632e1a7d4d146100c957806370b2a30f146100fe575b600080fd5b34801561008c57600080fd5b5061009660005481565b6040519081526020015b60405180910390f35b3480156100b557600080fd5b506100966100c4366004610b20565b61016e565b3480156100d557600080fd5b506100e96100e4366004610af0565b6101bc565b604080519283526020830191909152016100a0565b34801561010a57600080fd5b50610096610119366004610af0565b610403565b610096610620565b610096610134366004610af0565b610795565b34801561014557600080fd5b50610096610154366004610aa9565b60016020526000908152604090205481565b6100966108f4565b60008061017d856103e5610a85565b9050600061018b8285610a85565b905060006101a58361019f886103e8610a85565b90610a91565b90506101b18183610b63565b979650505050505050565b6002546040516370a0823160e01b81523060048201526000918291479183916001600160a01b03909116906370a082319060240160206040518083038186803b15801561020857600080fd5b505afa15801561021c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102409190610b08565b9050600061025c600054846102559190610b63565b8790610a85565b600080549192509061026e8885610a85565b6102789190610b63565b336000908152600160205260409020549091506102959083610a9d565b33600090815260016020526040812091909155546102b39083610a9d565b6000908155604051339084908381818185875af1925050503d80600081146102f7576040519150601f19603f3d011682016040523d82523d6000602084013e6102fc565b606091505b50509050806103695760405162461bcd60e51b815260206004820152602e60248201527f776974686472617728293a2072657665727420696e207472616e73666572726960448201526d6e672065746820746f20796f752160901b60648201526084015b60405180910390fd5b60025460405163a9059cbb60e01b8152336004820152602481018490526001600160a01b039091169063a9059cbb90604401602060405180830381600087803b1580156103b557600080fd5b505af11580156103c9573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103ed9190610ad0565b6103f657600080fd5b5090969095509350505050565b6002546040516370a0823160e01b815230600482015260009182916001600160a01b03909116906370a082319060240160206040518083038186803b15801561044b57600080fd5b505afa15801561045f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104839190610b08565b9050600061049284834761016e565b6002546040516323b872dd60e01b8152336004820152306024820152604481018790529192506001600160a01b0316906323b872dd90606401602060405180830381600087803b1580156104e557600080fd5b505af11580156104f9573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061051d9190610ad0565b6105695760405162461bcd60e51b815260206004820152601c60248201527f746f6b656e546f45746828293a20726576657274656420737761702e000000006044820152606401610360565b604051600090339083908381818185875af1925050503d80600081146105ab576040519150601f19603f3d011682016040523d82523d6000602084013e6105b0565b606091505b50509050806106185760405162461bcd60e51b815260206004820152602e60248201527f746f6b656e546f4574683a2072657665727420696e207472616e73666572726960448201526d6e672065746820746f20796f752160901b6064820152608401610360565b509392505050565b60008061062d4734610a9d565b6002546040516370a0823160e01b81523060048201529192506000916001600160a01b03909116906370a082319060240160206040518083038186803b15801561067657600080fd5b505afa15801561068a573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106ae9190610b08565b905060006106bd34848461016e565b60025460405163a9059cbb60e01b8152336004820152602481018390529192506001600160a01b03169063a9059cbb90604401602060405180830381600087803b15801561070a57600080fd5b505af115801561071e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906107429190610ad0565b61078e5760405162461bcd60e51b815260206004820152601c60248201527f657468546f546f6b656e28293a20726576657274656420737761702e000000006044820152606401610360565b9392505050565b60008054156107f05760405162461bcd60e51b815260206004820152602160248201527f4445583a20696e6974202d20616c726561647920686173206c697175696469746044820152607960f81b6064820152608401610360565b4760008181553380825260016020526040918290209290925560025490516323b872dd60e01b81526004810192909252306024830152604482018490526001600160a01b0316906323b872dd90606401602060405180830381600087803b15801561085a57600080fd5b505af115801561086e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108929190610ad0565b6108ec5760405162461bcd60e51b815260206004820152602560248201527f4445583a20696e6974202d207472616e7366657220646964206e6f74207472616044820152641b9cd858dd60da1b6064820152608401610360565b505060005490565b6000806109014734610a9d565b6002546040516370a0823160e01b81523060048201529192506000916001600160a01b03909116906370a082319060240160206040518083038186803b15801561094a57600080fd5b505afa15801561095e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109829190610b08565b9050600061099f600161019f6109988686610b63565b3490610a85565b905060006109b4846000546109989190610b63565b336000908152600160205260409020549091506109d19082610a91565b33600090815260016020526040812091909155546109ef9082610a91565b6000556002546040516323b872dd60e01b8152336004820152306024820152604481018490526001600160a01b03909116906323b872dd90606401602060405180830381600087803b158015610a4457600080fd5b505af1158015610a58573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610a7c9190610ad0565b61061857600080fd5b600061078e8284610b83565b600061078e8284610b4b565b600061078e8284610ba2565b600060208284031215610aba578081fd5b81356001600160a01b038116811461078e578182fd5b600060208284031215610ae1578081fd5b8151801515811461078e578182fd5b600060208284031215610b01578081fd5b5035919050565b600060208284031215610b19578081fd5b5051919050565b600080600060608486031215610b34578182fd5b505081359360208301359350604090920135919050565b60008219821115610b5e57610b5e610bb9565b500190565b600082610b7e57634e487b7160e01b81526012600452602481fd5b500490565b6000816000190483118215151615610b9d57610b9d610bb9565b500290565b600082821015610bb457610bb4610bb9565b500390565b634e487b7160e01b600052601160045260246000fdfea2646970667358221220021b16d41e25768c7784767916257b162bb4663829704ec6501e8bb89adf7bf864736f6c63430008040033",
+  "deployedBytecode": "0x60806040526004361061007b5760003560e01c8063789770f41161004e578063789770f41461011e578063b7b0422d14610126578063b8c876b114610139578063d0e30db01461016657600080fd5b806315770f92146100805780632071a9f4146100a95780632e1a7d4d146100c957806370b2a30f146100fe575b600080fd5b34801561008c57600080fd5b5061009660005481565b6040519081526020015b60405180910390f35b3480156100b557600080fd5b506100966100c4366004610b20565b61016e565b3480156100d557600080fd5b506100e96100e4366004610af0565b6101bc565b604080519283526020830191909152016100a0565b34801561010a57600080fd5b50610096610119366004610af0565b610403565b610096610620565b610096610134366004610af0565b610795565b34801561014557600080fd5b50610096610154366004610aa9565b60016020526000908152604090205481565b6100966108f4565b60008061017d856103e5610a85565b9050600061018b8285610a85565b905060006101a58361019f886103e8610a85565b90610a91565b90506101b18183610b63565b979650505050505050565b6002546040516370a0823160e01b81523060048201526000918291479183916001600160a01b03909116906370a082319060240160206040518083038186803b15801561020857600080fd5b505afa15801561021c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102409190610b08565b9050600061025c600054846102559190610b63565b8790610a85565b600080549192509061026e8885610a85565b6102789190610b63565b336000908152600160205260409020549091506102959083610a9d565b33600090815260016020526040812091909155546102b39083610a9d565b6000908155604051339084908381818185875af1925050503d80600081146102f7576040519150601f19603f3d011682016040523d82523d6000602084013e6102fc565b606091505b50509050806103695760405162461bcd60e51b815260206004820152602e60248201527f776974686472617728293a2072657665727420696e207472616e73666572726960448201526d6e672065746820746f20796f752160901b60648201526084015b60405180910390fd5b60025460405163a9059cbb60e01b8152336004820152602481018490526001600160a01b039091169063a9059cbb90604401602060405180830381600087803b1580156103b557600080fd5b505af11580156103c9573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906103ed9190610ad0565b6103f657600080fd5b5090969095509350505050565b6002546040516370a0823160e01b815230600482015260009182916001600160a01b03909116906370a082319060240160206040518083038186803b15801561044b57600080fd5b505afa15801561045f573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104839190610b08565b9050600061049284834761016e565b6002546040516323b872dd60e01b8152336004820152306024820152604481018790529192506001600160a01b0316906323b872dd90606401602060405180830381600087803b1580156104e557600080fd5b505af11580156104f9573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061051d9190610ad0565b6105695760405162461bcd60e51b815260206004820152601c60248201527f746f6b656e546f45746828293a20726576657274656420737761702e000000006044820152606401610360565b604051600090339083908381818185875af1925050503d80600081146105ab576040519150601f19603f3d011682016040523d82523d6000602084013e6105b0565b606091505b50509050806106185760405162461bcd60e51b815260206004820152602e60248201527f746f6b656e546f4574683a2072657665727420696e207472616e73666572726960448201526d6e672065746820746f20796f752160901b6064820152608401610360565b509392505050565b60008061062d4734610a9d565b6002546040516370a0823160e01b81523060048201529192506000916001600160a01b03909116906370a082319060240160206040518083038186803b15801561067657600080fd5b505afa15801561068a573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906106ae9190610b08565b905060006106bd34848461016e565b60025460405163a9059cbb60e01b8152336004820152602481018390529192506001600160a01b03169063a9059cbb90604401602060405180830381600087803b15801561070a57600080fd5b505af115801561071e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906107429190610ad0565b61078e5760405162461bcd60e51b815260206004820152601c60248201527f657468546f546f6b656e28293a20726576657274656420737761702e000000006044820152606401610360565b9392505050565b60008054156107f05760405162461bcd60e51b815260206004820152602160248201527f4445583a20696e6974202d20616c726561647920686173206c697175696469746044820152607960f81b6064820152608401610360565b4760008181553380825260016020526040918290209290925560025490516323b872dd60e01b81526004810192909252306024830152604482018490526001600160a01b0316906323b872dd90606401602060405180830381600087803b15801561085a57600080fd5b505af115801561086e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108929190610ad0565b6108ec5760405162461bcd60e51b815260206004820152602560248201527f4445583a20696e6974202d207472616e7366657220646964206e6f74207472616044820152641b9cd858dd60da1b6064820152608401610360565b505060005490565b6000806109014734610a9d565b6002546040516370a0823160e01b81523060048201529192506000916001600160a01b03909116906370a082319060240160206040518083038186803b15801561094a57600080fd5b505afa15801561095e573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906109829190610b08565b9050600061099f600161019f6109988686610b63565b3490610a85565b905060006109b4846000546109989190610b63565b336000908152600160205260409020549091506109d19082610a91565b33600090815260016020526040812091909155546109ef9082610a91565b6000556002546040516323b872dd60e01b8152336004820152306024820152604481018490526001600160a01b03909116906323b872dd90606401602060405180830381600087803b158015610a4457600080fd5b505af1158015610a58573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610a7c9190610ad0565b61061857600080fd5b600061078e8284610b83565b600061078e8284610b4b565b600061078e8284610ba2565b600060208284031215610aba578081fd5b81356001600160a01b038116811461078e578182fd5b600060208284031215610ae1578081fd5b8151801515811461078e578182fd5b600060208284031215610b01578081fd5b5035919050565b600060208284031215610b19578081fd5b5051919050565b600080600060608486031215610b34578182fd5b505081359360208301359350604090920135919050565b60008219821115610b5e57610b5e610bb9565b500190565b600082610b7e57634e487b7160e01b81526012600452602481fd5b500490565b6000816000190483118215151615610b9d57610b9d610bb9565b500290565b600082821015610bb457610bb4610bb9565b500390565b634e487b7160e01b600052601160045260246000fdfea2646970667358221220021b16d41e25768c7784767916257b162bb4663829704ec6501e8bb89adf7bf864736f6c63430008040033",
+  "devdoc": {
+    "author": "Steve P.",
+    "kind": "dev",
+    "methods": {
+      "init(uint256)": {
+        "params": {
+          "tokens": "amount to be transferred to DEX"
+        },
+        "returns": {
+          "_0": "totalLiquidity is the balance of this DEX contract NOTE: since ratio is 1:1, this is fine to initialize the totalLiquidity (wrt to balloons) as equal to eth balance of contract."
+        }
+      }
+    },
+    "title": "DEX",
+    "version": 1
+  },
+  "userdoc": {
+    "events": {
+      "EthToTokenSwap(address,uint256,uint256)": {
+        "notice": "Emitted when ethToToken() swap transacted"
+      },
+      "LiquidityProvided(address,uint256,uint256,uint256,uint256,uint256)": {
+        "notice": "Emitted when liquidity provided to DEX"
+      },
+      "LiquidityRemoved(address,uint256,uint256,uint256,uint256,uint256)": {
+        "notice": "Emitted when liquidity removed from DEX"
+      },
+      "TokenToEthSwap(address,uint256,uint256)": {
+        "notice": "Emitted when tokenToEth() swap transacted"
+      }
+    },
+    "kind": "user",
+    "methods": {
+      "deposit()": {
+        "notice": "allows deposits of $BAL and $ETH to liquidity pool NOTE: Ratio needs to be maintained."
+      },
+      "ethToToken()": {
+        "notice": "sends Ether to DEX in exchange for $BAL"
+      },
+      "init(uint256)": {
+        "notice": "initializes amount of tokens that will be transferred to the DEX itself from the erc20 contract mintee (and only them based on how Balloons.sol is written). Loads contract up with both ETH and Balloons."
+      },
+      "price(uint256,uint256,uint256)": {
+        "notice": "returns yOutput, or yDelta for xInput (or xDelta)"
+      },
+      "tokenToEth(uint256)": {
+        "notice": "sends $BAL tokens to DEX in exchange for Ether"
+      },
+      "withdraw(uint256)": {
+        "notice": "allows withdrawal of $BAL and $ETH from liquidity pool"
+      }
+    },
+    "notice": "this is a single token pair reserves DEX, ref: \"Scaffold-ETH Challenge 2\" as per https://speedrunethereum.com/challenge/token-vendor",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 1009,
+        "contract": "contracts/DEX.sol:DEX",
+        "label": "totalLiquidity",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 1013,
+        "contract": "contracts/DEX.sol:DEX",
+        "label": "liquidity",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_address,t_uint256)"
+      },
+      {
+        "astId": 1019,
+        "contract": "contracts/DEX.sol:DEX",
+        "label": "token",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_contract(IERC20)623"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_contract(IERC20)623": {
+        "encoding": "inplace",
+        "label": "contract IERC20",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
